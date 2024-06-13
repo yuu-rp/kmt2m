@@ -14,46 +14,70 @@
 
     // Your code here...
     document.addEventListener('touchstart', (e) => {
+	console.log("touchstart");
         e.preventDefault();
         e.stopImmediatePropagation();
         e.stopPropagation();
         const src = e.changedTouches[0];
         document.dispatchEvent( new PointerEvent('pointerdown', {
+		 	x: src.clientX,
+			y: src.clientY,
                                      screenX: src.screenX,
                                      screenY: src.screenY,
                                      clientX: src.clientX,
                                      clientY: src.clientY,
-                                     pressure:1
+			pageX: src.pageX,
+			pageY: src.pageY,
+                                     pressure:1,
+			target: e.target,
+			timestamp: e.timestamp,
+			srcElement: e.srcElement
                                      })
         );
     });
 
     document.addEventListener('touchend', (e) => {
+	console.log("touchend");
         e.preventDefault();
         e.stopImmediatePropagation();
         e.stopPropagation();
         const src = e.changedTouches[0];
         document.dispatchEvent( new PointerEvent('pointerup', {
+		 	x: src.clientX,
+			y: src.clientY,
                                      screenX: src.screenX,
                                      screenY: src.screenY,
                                      clientX: src.clientX,
                                      clientY: src.clientY,
-                                     pressure:0
+			pageX: src.pageX,
+			pageY: src.pageY,
+                                     pressure:0,
+			target: e.target,
+			timestamp: e.timestamp,
+			srcElement: e.srcElement
                                      })
         );
     });
 
     document.addEventListener('touchmove', (e) => {
+	console.log("touchmove");
         e.preventDefault();
         e.stopImmediatePropagation();
         e.stopPropagation();
         const src = e.changedTouches[0];
         document.dispatchEvent( new PointerEvent('pointermove', {
+		 	x: src.clientX,
+			y: src.clientY,
                                      screenX: src.screenX,
                                      screenY: src.screenY,
                                      clientX: src.clientX,
                                      clientY: src.clientY,
-                                     pressure:1
+			pageX: src.pageX,
+			pageY: src.pageY,
+                                     pressure:1,
+			target: e.target,
+			timestamp: e.timestamp,
+			srcElement: e.srcElement
                                      })
         );
     });
