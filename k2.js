@@ -12,7 +12,7 @@
 (function() {
     'use strict';
     const touchToMouse = function (event) {
-        console.log(event);
+        console.log(event)
         // if (event.touches.length > 1) return; //allow default multi-touch gestures to work
         var touch = event.changedTouches[0];
         var type = "";
@@ -32,6 +32,8 @@
         const simulatedEvent = new MouseEvent(type, {
             screenX: touch.screenX,
             screenY: touch.screenY,
+            pageX: touch.pageX,
+            pageY: touch.pageY,
             clientX: touch.clientX,
             clientY: touch.clientY,
             view: window,
@@ -43,7 +45,8 @@
             metaKey: false,
             detail: 1,
             button: 0
-        })
+        });
+        console.log('simulated:', simulatedEvent);
         // var simulatedEvent = document.createEvent("MouseEvent");
         // simulatedEvent.initMouseEvent(type, true, true, window, 1,
         //     touch.screenX, touch.screenY,
