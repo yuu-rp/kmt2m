@@ -43,8 +43,9 @@
             altKey: false,
             shiftKey: false,
             metaKey: false,
-            detail: 1,
-            button: 0
+            detail: event.detail,
+            button: 0,
+            currentTarget: event.target
         });
         console.log('simulated:', simulatedEvent);
         // var simulatedEvent = document.createEvent("MouseEvent");
@@ -56,7 +57,10 @@
         touch.target.dispatchEvent(simulatedEvent);
         event.preventDefault();
     };
-    window.ontouchstart = touchToMouse;
-    window.ontouchmove = touchToMouse;
-    window.ontouchend = touchToMouse;
+    window.addEventListener('touchstart', touchToMouse, true)
+    window.addEventListener('touchmove', touchToMouse, true)
+    window.addEventListener('touchend', touchToMouse, true)
+    // window.ontouchstart = touchToMouse;
+    // window.ontouchmove = touchToMouse;
+    // window.ontouchend = touchToMouse;
 })();
