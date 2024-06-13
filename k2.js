@@ -45,6 +45,7 @@
             metaKey: false,
             detail: event.detail,
             button: 0,
+            buttons: 1,
             currentTarget: event.target
         });
         console.log('simulated:', simulatedEvent);
@@ -57,10 +58,10 @@
         touch.target.dispatchEvent(simulatedEvent);
         event.preventDefault();
     };
-    const cv = document.querySelector('canvas')
-    cv.addEventListener('touchstart', touchToMouse, true)
-    cv.addEventListener('touchmove', touchToMouse, true)
-    cv.addEventListener('touchend', touchToMouse, true)
+    // const cv = document.querySelector('canvas')
+    window.addEventListener('touchstart', touchToMouse, true)
+    window.addEventListener('touchmove', touchToMouse, true)
+    window.addEventListener('touchend', touchToMouse, true)
     // window.ontouchstart = touchToMouse;
     // window.ontouchmove = touchToMouse;
     // window.ontouchend = touchToMouse;
