@@ -12,6 +12,7 @@
 (function() {
     'use strict';
     const touchToMouse = function (event) {
+        console.log(event);
         // if (event.touches.length > 1) return; //allow default multi-touch gestures to work
         var touch = event.changedTouches[0];
         var type = "";
