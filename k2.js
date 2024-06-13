@@ -57,9 +57,10 @@
         touch.target.dispatchEvent(simulatedEvent);
         event.preventDefault();
     };
-    window.addEventListener('touchstart', touchToMouse, true)
-    window.addEventListener('touchmove', touchToMouse, true)
-    window.addEventListener('touchend', touchToMouse, true)
+    const cv = document.querySelector('canvas')
+    cv.addEventListener('touchstart', touchToMouse, true)
+    cv.addEventListener('touchmove', touchToMouse, true)
+    cv.addEventListener('touchend', touchToMouse, true)
     // window.ontouchstart = touchToMouse;
     // window.ontouchmove = touchToMouse;
     // window.ontouchend = touchToMouse;
