@@ -20,6 +20,7 @@
         e.stopPropagation();
         const src = e.changedTouches[0];
 	const ev = new PointerEvent("pointerdown", { pointerType:'pen', clientX: src.clientX, clientY: src.clientY, pressure:1 });
+	console.log(ev);
 	e.target.dispatchEvent(ev);
    //      document.dispatchEvent( new PointerEvent('pointerdown', {
 			// pointerType: 'mouse',
@@ -46,6 +47,7 @@
         e.stopPropagation();
         const src = e.changedTouches[0];
 	const ev = new PointerEvent("pointerup", { pointerType:'pen', clientX: src.clientX, clientY: src.clientY });
+	console.log(ev);
 	e.target.dispatchEvent(ev);
    //      document.dispatchEvent( new PointerEvent('pointerup', {
 			// pointerType: 'mouse',
@@ -72,6 +74,7 @@
         e.stopPropagation();
         const src = e.changedTouches[0];
 	const ev = new PointerEvent("pointermove", { pointerType:'pen', clientX: src.clientX, clientY: src.clientY, pressure:1 });
+	console.log(ev);
 	e.target.dispatchEvent(ev);
 
    //      document.dispatchEvent( new PointerEvent('pointermove', {
