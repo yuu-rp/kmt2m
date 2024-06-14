@@ -17,6 +17,7 @@
     const _addEventListener = EventTarget.prototype.addEventListener;
     Object.defineProperty(proto, "addEventListener", {
         value: function (type, fn, ...rest) {
+            console.log('THE REST:::', rest);
             _addEventListener.call(this, type, function(...args) {
                 console.log(`addEventListener of type %c${type}`+` was fired`, "color:cyan; background-color:black; font-weight:bold; padding:0.2rem;");
                 console.log('arguments:', args);
