@@ -18,9 +18,9 @@
     Object.defineProperty(proto, "addEventListener", {
         value: function (type, fn, ...rest) {
             _addEventListener.call(this, type, function(...args) {
-                if(type.startsWith('pointer')) {
-                    console.log(`addEventListener of type %c${type}`+` was fired`, "color:cyan; background-color:black; font-weight:bold; padding:0.2rem;");
-                    console.log('arguments:', args);
+                console.log(`addEventListener of type %c${type}`+` was fired`, "color:cyan; background-color:black; font-weight:bold; padding:0.2rem;");
+                console.log('arguments:', args);
+                if(type.startsWith('pointer') && args[0].pointerType=='touch') {
                     const _args = [new PointerEvent(args[0].type, {
                         isTrusted: args[0].isTrusted,
                         altKey: args[0].altKey,
@@ -75,7 +75,7 @@
                         x: args[0].x,
                         y: args[0].y
                         })];
-                    console.log(_args);
+                    console.log('delegating arguments:', _args);
                     return fn.apply(this, _args);
                 }
                 return fn.apply(this, args);
