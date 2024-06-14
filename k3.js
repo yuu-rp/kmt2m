@@ -13,13 +13,6 @@
     'use strict';
 
     // Your code here...
-    function shallowClone(obj) {
-        return Object.create(
-            Object.getPrototypeOf(obj), 
-            Object.getOwnPropertyDescriptors(obj) 
-        );
-    }
-    
     const proto = EventTarget.prototype;
     const _addEventListener = EventTarget.prototype.addEventListener;
     Object.defineProperty(proto, "addEventListener", {
@@ -28,8 +21,60 @@
                 if(type.startsWith('pointer')) {
                     console.log(`addEventListener of type %c${type}`+` was fired`, "color:cyan; background-color:black; font-weight:bold; padding:0.2rem;");
                     console.log('arguments:', args[0]);
-                    // if(args[0].pointerType=='touch') args[0].pointerType='pen';
-                    const _args = [{...shallowClone(args[0]), pointerType:'pen'}]
+                    const _args = [{
+                        isTrusted: args[0].isTrusted,
+                        altKey: args[0].altKey,
+                        altitudeAngle: args[0].altitudeAngle,
+                        azimuthAngle: args[0].azimuthAngle,
+                        bubbles: args[0].bubbles,
+                        button: args[0].button,
+                        buttons: args[0].buttons,
+                        cancelBubble: args[0].cancelBubble,
+                        cancelable: args[0].cancelable,
+                        clientX: args[0].clientX,
+                        clientY: args[0].clientY,
+                        composed: args[0].composed,
+                        ctrlKey: args[0].ctrlKey,
+                        currentTarget: args[0].currentTarget,
+                        defaultPrevented: args[0].defaultPrevented,
+                        detail: args[0].detail,
+                        eventPhrase: args[0].eventPhrase,
+                        fromElement: args[0].fromElement,
+                        height: args[0].height,
+                        isPrimary: args[0].isPrimary,
+                        layerX: args[0].layerX,
+                        layerY: args[0].layerY,
+                        metaKey: args[0].metaKey,
+                        movementX: args[0].movementX,
+                        movementY: args[0].movementY,
+                        offsetX: args[0].offsetX,
+                        offsetY: args[0].offsetY,
+                        pageX: args[0].pageX,
+                        pageY: args[0].pageY,
+                        pointerId: args[0].pointerId,
+                        pointerType: 'pen',
+                        pressure: args[0].pressure,
+                        relatedTarget: args[0].relatedTarget,
+                        returnValue: args[0].returnValue,
+                        screenX: args[0].screenX,
+                        screenY: args[0].screenY,
+                        shiftKey: args[0].shiftKey,
+                        sourceCapabilities: args[0].sourceCapabilities,
+                        srcElement: args[0].srcElement,
+                        tangentialPressure: args[0].tangentialPressure,
+                        target: args[0].target,
+                        tiltX: args[0].tiltX,
+                        tiltY: args[0].tiltY,
+                        timeStamp: args[0].timeStamp,
+                        toElement: args[0].toElement,
+                        twist: args[0].twist,
+                        type: args[0].type,
+                        view: args[0].view,
+                        which: args[0].which,
+                        width: args[0].width,
+                        x: args[0].x,
+                        y: args[0].y
+                        }];
                     console.log(_args);
                     return fn.apply(this, _args);
                 }
