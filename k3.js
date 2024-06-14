@@ -28,7 +28,7 @@
                         azimuthAngle: args[0].azimuthAngle,
                         bubbles: args[0].bubbles,
                         button: args[0].type=='pointermove' ? -1 : 0,
-                        buttons: args[0].type=='pointerup' ? 0, 1,
+                        buttons: args[0].type=='pointerup' ? 0 : 1,
                         cancelBubble: args[0].cancelBubble,
                         cancelable: args[0].cancelable,
                         clientX: args[0].clientX,
