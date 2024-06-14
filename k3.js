@@ -23,6 +23,7 @@
                     console.log('arguments:', args[0]);
                     if(args[0].pointerType=='touch') args[0].pointerType='pen';
                 }
+                console.log('delegating arguments:', args);
                 return fn.apply(this, args);
             }, ...rest);
        }
