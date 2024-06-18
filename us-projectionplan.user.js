@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         Kumon Connect Project Plan Helper
 // @namespace    http://tampermonkey.net/
 // @version      2024-06-16
 // @description  try to take over the world!
