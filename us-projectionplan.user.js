@@ -2,10 +2,10 @@
 // @name         Kumon Connect Project Plan Helper
 // @namespace    http://tampermonkey.net/
 // @version      2024-06-16
-// @description  try to take over the world!
-// @author       You
+// @description  แสดงชุดยากง่ายของแต่ละรายวิชา
+// @author       Roongroj Pongsapich
 // @match        https://class-navi.digital.kumon.com/th/index.html
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=kumon.com
+// @icon         https://raw.githubusercontent.com/yuu-rp/kmt2m/main/icon_128.png
 // @grant        none
 // ==/UserScript==
 
